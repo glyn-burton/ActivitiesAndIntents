@@ -23,17 +23,9 @@ class PersonActivity : AppCompatActivity() {
         when(view.id){
 
             R.id.btnCreatePerson -> {
-
-                val name = etName.toString()
-                val surname = etSurname.toString()
-                val age = etAge.toString()
-                val createdPerson = Person(name,surname,age)
-                passedPerson.putExtra("Person",createdPerson)
-                setResult(101,passedPerson)
-                finish()
                 val intent = Intent(this,PersonResultActivity::class.java)
                 intent.putParcelableArrayListExtra("newPerson", personList)
-                startActivity(intent)
+                startActivityForResult(intent,2001)
 
 
 
